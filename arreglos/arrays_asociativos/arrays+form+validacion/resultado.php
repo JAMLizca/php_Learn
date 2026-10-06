@@ -29,8 +29,6 @@ elseif(empty($correo)){
 }else{
     foreach ($datos as $clave => $valor){
     echo "$clave : $valor <br>";
-}
+ }
 } 
-
-
 ?>
