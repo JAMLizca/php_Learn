@@ -22,7 +22,7 @@ $estudiantes = [
 foreach ($estudiantes as $estudia){
     //toma cada dato del estudiante
     foreach ($estudia as $clave => $valor ){
-        echo "$clave : $valor";
+        echo "$clave : $valor<br>";
     }
 }
 ?>
