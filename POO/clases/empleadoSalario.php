@@ -19,17 +19,22 @@ class empleado{
 
     public function aumentarSalario($cantidad): string{
         $this->salario = $this->salario + $cantidad;
-        return "El nuevo salario es: {$this->salario}";
+        return "El nuevo salario es de:$ {$this->salario}";
     }
 }
 
 $empleadoUno = new empleado("Juan", "Gerente", 122244);
 $empleadoDos = new empleado("Pedro", "Desarrollador", 121234);
 
-echo "<h3>Empleado Juan</h3>";
+echo "<h3>Empleado {$empleadoUno->nombre}</h3>";
 echo $empleadoUno->mostrarDatos();
 echo "<br>";
 echo $empleadoUno->aumentarSalario(200000);
+echo "<br>";
+echo "<h3>Empleado {$empleadoDos->nombre}</h3>";
+echo $empleadoDos->mostrarDatos();
+echo "<br>";
+echo $empleadoDos->aumentarSalario(150000);
 
 
 ?>
