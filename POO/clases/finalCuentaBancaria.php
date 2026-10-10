@@ -29,7 +29,7 @@ class cuentaBancaria{
         if ($cantidad <= 0){
             return "La cantidad necesita ser mayor a cero";
         }elseif($cantidad > $this->saldo){
-            return "La cantidad supera al saldo disponible";
+            return "<br>La cantidad supera al saldo disponible";
         }else{
             $this->saldo = $this->saldo - $cantidad;
             return "El nuevo saldo actualizado con el descuento es de {$this->saldo}";
@@ -42,7 +42,7 @@ class cuentaBancaria{
 $titularUno = new cuentaBancaria("Laura",1001, 500000);
 $titularDos = new cuentaBancaria("Andrés", 1002, 800000);
 
-echo "<h3>Datos de la cuenta bancaria {$titularUno->nombre}</h3>";
+echo "<h3>Datos de la cuenta bancaria de {$titularUno->titular}</h3>";
 echo $titularUno->mostrarDatos();
 echo "<br>";
 echo $titularUno->depositar(100000);
@@ -50,6 +50,8 @@ echo "<br>";
 echo $titularUno->retirar(200000);
 echo $titularUno->retirar(500000);
 echo "<br>";
-echo "<h3>Datos de la cuenta bancaria {$titularDos->nombre}</h3>";
+echo "<h3>Datos de la cuenta bancaria de {$titularDos->titular}</h3>";
+echo "<br>";
+echo $titularDos->mostrarDatos();
 
 ?>
