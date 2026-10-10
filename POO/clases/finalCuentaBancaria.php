@@ -39,10 +39,10 @@ class cuentaBancaria{
 
 }
 
-$titularUno = cuentaBancaria("Laura",1001, 500000);
-$titularDos = cuentaBancaria("Andrés", 1002, 800000);
+$titularUno = new cuentaBancaria("Laura",1001, 500000);
+$titularDos = new cuentaBancaria("Andrés", 1002, 800000);
 
-echo "Datos de la cuenta bancaria {$titularUno->nombre}";
+echo "<h3>Datos de la cuenta bancaria {$titularUno->nombre}</h3>";
 echo $titularUno->mostrarDatos();
 echo "<br>";
 echo $titularUno->depositar(100000);
@@ -50,6 +50,6 @@ echo "<br>";
 echo $titularUno->retirar(200000);
 echo $titularUno->retirar(500000);
 echo "<br>";
-echo "Datos de la cuenta bancaria {$titularDos->nombre}";
+echo "<h3>Datos de la cuenta bancaria {$titularDos->nombre}</h3>";
 
 ?>
