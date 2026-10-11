@@ -4,7 +4,9 @@ class edad{
 
 
     public function __construct(int $edad){
-        $this->edad = $edad;
+        //utilizar el setter desde el constructor
+        //$this->edad = $edad;
+        $this->setEdad($edad);
     }
 
     public function getEdad(): int{
