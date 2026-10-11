@@ -33,14 +33,16 @@ class producto{
     }
 
     //método
-    public function vender(int $cantidad): void{
-      if ($cantidad <= 0){
-        return;
-      }elseif($this->stock < $cantidad){
-        return;
-      }else{
-        $this->stock = $this->stock - $cantidad;
-      }
+   public function vender(int $cantidad): void {
+        if ($cantidad <= 0) {
+            return;
+        }
+
+        if ($this->stock < $cantidad) {
+            return;
+        }
+
+        $this->stock -= $cantidad; 
     }
 }
 
