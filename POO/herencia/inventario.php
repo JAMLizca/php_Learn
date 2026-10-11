@@ -6,8 +6,9 @@ class Producto{
     private $stock;
 
     public function __construct($nombre, $precio, $stock){
+     //validaciones en el constructor
      if (empty($nombre)){
-        //throw new Exception("EL nombre no debe estar vacio", 1);  
+        //throw new Exception("EL nombre no debe estar vacio", 1);   
         throw new InvalidArgumentException("El nombre no debe estar vacio");  
      }   
       
@@ -70,5 +71,13 @@ echo "<br>";
 echo $producto->getStock();
 echo "<br>";
 echo $producto->vender(4);
+echo "<hr>";
+
+try {
+    $productoDos = new Producto("Teclado", -80000, 10);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+     
+}
 
 ?>
