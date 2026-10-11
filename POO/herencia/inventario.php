@@ -1,6 +1,6 @@
 <?php
 
-class producto{
+class Producto{
     private $nombre;
     private $precio;
     private $stock;
@@ -33,16 +33,17 @@ class producto{
     }
 
     //método
-   public function vender(int $cantidad): void {
+   public function vender(int $cantidad): string {
         if ($cantidad <= 0) {
-            return;
+            return "Cantidad inválida";
         }
 
         if ($this->stock < $cantidad) {
-            return;
+            return "Stock insuficiente";
+        } else {
+            $this->stock -= $cantidad; 
+            return "Venta realizada correctamente";
         }
-
-        $this->stock -= $cantidad; 
     }
 }
 
@@ -54,9 +55,7 @@ echo "<br>";
 echo $producto->getPrecio();
 echo "<br>";
 echo $producto->getStock();
-
-$producto->vender(3);
 echo "<br>";
+echo $producto->vender(4);
 
-echo $producto->getStock();
 ?>
