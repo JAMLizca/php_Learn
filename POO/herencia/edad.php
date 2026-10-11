@@ -13,7 +13,7 @@ class edad{
     }
 
     public function setEdad(int $nuevaEdad): void{
-        if( $nuevaEdad < 0){
+        if( $nuevaEdad < 0 || $nuevaEdad >100){
             return;
         }
         $this->edad = $nuevaEdad;
