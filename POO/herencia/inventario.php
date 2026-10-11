@@ -6,8 +6,21 @@ class Producto{
     private $stock;
 
     public function __construct($nombre, $precio, $stock){
-     $this->nombre = $nombre;       
-     $this->precio = $precio;       
+     if (empty($nombre)){
+        //throw new Exception("EL nombre no debe estar vacio", 1);  
+        throw new InvalidArgumentException("El nombre no debe estar vacio");  
+     }   
+      
+     if($precio <= 0){
+        throw new InvalidArgumentException("El precio debe ser mayor que cero");
+     }
+    
+     if($stock < 0){
+        throw new InvalidArgumentException("El stock no puede ser negativo");
+     }
+
+     $this->nombre = $nombre;
+     $this->precio = $precio;
      $this->stock = $stock;
     }
     
