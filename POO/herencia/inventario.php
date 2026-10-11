@@ -76,8 +76,20 @@ echo "<hr>";
 try {
     $productoDos = new Producto("Teclado", -80000, 10);
 } catch (InvalidArgumentException $e) {
-    echo $e->getMessage();
-     
+    echo $e->getMessage();    
+}finally{
+    echo "<br> El programa continua ejecutandose";
 }
 
+echo "<hr>";
+$productoTres = new Producto ("Mouse", 50000, 0);
+echo $productoTres->getNombre();
+echo "<br>";
+echo $productoTres->getStock();
+echo "<hr>";
+try {
+    //code...
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage;
+}
 ?>
