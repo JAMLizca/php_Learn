@@ -9,7 +9,8 @@ class Producto {
         $this->precio = $precio;
         $this->stock = $stock;
     }
-
+    
+    //getters
     public function getNombre(): string{
         return $this->nombre;
     }
@@ -18,8 +19,21 @@ class Producto {
         return $this->precio;
     }
 
-    public function getStock(): float{
+    public function getStock(): int{
         return $this->stock;
+    }
+
+    //setters
+    public function setNombre($nuevoNombre): void{
+        $this->nombre = $nuevoNombre;
+    }
+
+    public function setPrecio($nuevoPrecio): void{
+        $this->precio = $nuevoPrecio;
+    }
+
+    public function setStock($nuevoStock): void{
+        $this->stock = $nuevoStock;
     }
 }
 ?>
