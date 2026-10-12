@@ -105,10 +105,9 @@ try {
 echo "<hr>";
 
 try {
-  echo $producto->vender(2);
-  echo $producto->stock();
+    echo $producto->vender(2);
+    echo "<br>Stock restante: " . $producto->getStock();
 } catch (InvalidArgumentException $e) {
     echo $e->getMessage();
 }
-
 ?>
