@@ -61,7 +61,7 @@ class Producto{
     }
 
     //método para controlar el stock
-    public function reponerStock($cantidad): void {
+    public function reponerStock(int $cantidad): void {
         if($cantidad <= 0){
             throw new InvalidArgumentException("La cantidad es igual o menor a cero");
         }
