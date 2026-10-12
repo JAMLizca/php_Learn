@@ -41,7 +41,7 @@ class Producto{
     //setters
     public function setPrecio($nuevoPrecio): void{
         if($nuevoPrecio <= 0){
-            return;
+            throw new InvalidArgumentException("El precio no puede ser menor o igual a cero");
         }
         $this->precio = $nuevoPrecio;
     }
@@ -110,4 +110,28 @@ try {
 } catch (InvalidArgumentException $e) {
     echo $e->getMessage();
 }
+
+echo "<hr> <br>";
+try {
+   $producto->setPrecio(-500);
+} catch (InvalidArgumentException  $e) {
+    echo $e->getMessage();
+    
+}
+
+echo "<hr> <br>";
+try {
+     $producto->setPrecio(-5000);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+}
+
+echo "<hr> <br>";
+try {
+    $producto->setPrecio(950000);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+}
+
+echo "Precio actual:"," ".  $producto->getPrecio();
 ?>
