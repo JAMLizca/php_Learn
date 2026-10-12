@@ -154,4 +154,18 @@ try {
 }
 
 echo "Precio actual:"," ".  $producto->getPrecio();
+
+echo "<hr>";
+
+$producto = new Producto("Mouse", 50000, 10);
+echo $producto->vender(3);
+echo "<br>";
+$producto->reponerStock(5);
+$producto->setPrecio(60000);
+echo "<hr>";
+echo "Nombre: " . $producto->getNombre() . "<br>";
+echo "Precio: $" . $producto->getPrecio() . "<br>";
+echo "Stock final: " . $producto->getStock();
+
+
 ?>
