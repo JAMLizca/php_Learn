@@ -5,3 +5,4 @@
 - Validar en constructores
 - InvalidArgumentException
 - Try && Catch
+- validaciones

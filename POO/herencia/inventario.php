@@ -13,7 +13,7 @@ class Producto{
      }   
       
      if($precio <= 0){
-        throw new InvalidArgumentException("El precio debe ser mayor que cero");
+        throw new InvalidArgumentException("<br>El precio debe ser mayor que cero");
      }
     
      if($stock < 0){
@@ -59,6 +59,15 @@ class Producto{
             return "Venta realizada correctamente";
         }
     }
+
+    //método para controlar el stock
+    public function reponerStock($cantidad): void {
+        if($cantidad <= 0){
+            throw new InvalidArgumentException("La cantidad es igual o menor a cero");
+        }
+
+        $this->stock += $cantidad;
+    }
 }
 
 //pruebas
@@ -72,6 +81,17 @@ echo $producto->getStock();
 echo "<br>";
 echo $producto->vender(4);
 echo "<hr>";
+$producto->reponerStock(50);
+echo "<br>";
+echo "Nuevo stock"," ".  $producto->getStock();
+echo "<hr>";
+try {
+    $producto->reponerStock(-5);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+}
+
+echo "<br>Stock nuevo:", " ". $producto->getStock();
 
 try {
     $productoDos = new Producto("Teclado", -80000, 10);
