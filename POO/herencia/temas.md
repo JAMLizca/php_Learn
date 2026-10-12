@@ -6,5 +6,6 @@
 - InvalidArgumentException
 - Try && Catch
 - validaciones
-- arrays de objetos
 - require_once
+- arrays de objetos
+- modificar objetos dentro del array
