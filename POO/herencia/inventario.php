@@ -49,7 +49,7 @@ class Producto{
     //método
    public function vender(int $cantidad): string {
         if ($cantidad <= 0) {
-            return "Cantidad inválida";
+           throw new InvalidArgumentException("Cantidad Invalida");
         }
 
         if ($this->stock < $cantidad) {
@@ -87,9 +87,28 @@ echo $productoTres->getNombre();
 echo "<br>";
 echo $productoTres->getStock();
 echo "<hr>";
+
 try {
-    //code...
+  echo $producto->vender(0);
 } catch (InvalidArgumentException $e) {
-    echo $e->getMessage;
+    echo $e->getMessage();
 }
+
+echo "<hr>";
+
+try {
+  echo $producto->vender(15);
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+}
+
+echo "<hr>";
+
+try {
+  echo $producto->vender(2);
+  echo $producto->stock();
+} catch (InvalidArgumentException $e) {
+    echo $e->getMessage();
+}
+
 ?>
