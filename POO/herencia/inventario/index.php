@@ -1,32 +1,42 @@
 <?php
 require_once 'inventario.php';
 
-//array de objeos
+// Array de objetos
 $producto = [];
 
 $producto[] = new Producto("Mouse", 500000, 10);
 $producto[] = new Producto("Teclado", 600000, 110);
 $producto[] = new Producto("Laptop", 700000, 90);
 
+// Mostrar inventario inicial
+echo "<h3>Inventario inicial</h3>";
+
 foreach ($producto as $item) {
-    echo " ", " ". $item->getNombre();
-    echo "<br>";
-    echo " ", " ". $item->getPrecio();
-    echo "<br>";
-    echo " ", " ". $item->getStock();
-       echo "<br>";
+    echo "Nombre: " . $item->getNombre() . "<br>";
+    echo "Precio: " . $item->getPrecio() . "<br>";
+    echo "Stock: " . $item->getStock() . "<br><hr>";
 }
 
-/*$nuevoProducto = new Producto("Mouse", 50000, 10);
+// Modificar el precio del teclado
+foreach ($producto as $item) {
+    if ($item->getNombre() === "Teclado") {
+        $item->setPrecio(650000);
+    }
+}
 
-echo $nuevoProducto->getNombre();
-echo "<br>";
-echo $nuevoProducto->getPrecio();
-echo "<br>";
-echo $nuevoProducto->getStock();
-echo "<br>";
-$nuevoProducto->setPrecio(600000);
-echo "<br>";
-echo "Nuevo precio:"," ".  $nuevoProducto->getPrecio();*/
+// Eliminar la Laptop
+foreach ($producto as $indice => $item) {
+    if ($item->getNombre() === "Laptop") {
+        unset($producto[$indice]);
+    }
+}
 
+// Mostrar inventario actualizado
+echo "<h3>Inventario actualizado</h3>";
+
+foreach ($producto as $item) {
+    echo "Nombre: " . $item->getNombre() . "<br>";
+    echo "Precio: " . $item->getPrecio() . "<br>";
+    echo "Stock: " . $item->getStock() . "<br><hr>";
+}
 ?>
