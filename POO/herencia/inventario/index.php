@@ -39,4 +39,13 @@ foreach ($producto as $item) {
     echo "Precio: " . $item->getPrecio() . "<br>";
     echo "Stock: " . $item->getStock() . "<br><hr>";
 }
+echo "<h3>Mostrar</h3>";
+//Mostrar unicamente el producto a buscar
+foreach($producto as $item){
+    if($item->getNombre() === "Teclado"){
+        echo $item->getNombre(). "<br>";
+        echo $item->getPrecio(). "<br>";
+        echo $item->getStock(). "<br>";
+    }
+}
 ?>
