@@ -39,13 +39,38 @@ foreach ($producto as $item) {
     echo "Precio: " . $item->getPrecio() . "<br>";
     echo "Stock: " . $item->getStock() . "<br><hr>";
 }
+
 echo "<h3>Mostrar</h3>";
 //Mostrar unicamente el producto a buscar
+
 foreach($producto as $item){
     if($item->getNombre() === "Teclado"){
         echo $item->getNombre(). "<br>";
         echo $item->getPrecio(). "<br>";
         echo $item->getStock(). "<br>";
     }
+}
+
+echo"<hr>";
+//Si el producto no existe
+
+echo "<h3>Buscar producto</h3>";
+
+$nombreBuscado = "Impresora";
+$encontrado = false;
+
+foreach ($producto as $item) {
+    if ($item->getNombre() === $nombreBuscado) {
+        echo "Nombre: " . $item->getNombre() . "<br>";
+        echo "Precio: " . $item->getPrecio() . "<br>";
+        echo "Stock: " . $item->getStock() . "<br>";
+
+        $encontrado = true;
+        break;
+    }
+}
+
+if ($encontrado === false) {
+    echo "El producto no existe en el inventario.";
 }
 ?>
