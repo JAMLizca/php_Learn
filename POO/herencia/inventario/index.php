@@ -73,4 +73,12 @@ foreach ($producto as $item) {
 if ($encontrado === false) {
     echo "El producto no existe en el inventario.";
 }
+
+
+//Controlar stock
+foreach($producto as $item){
+    if($item->getNombre === "Mouse"){
+        
+    }
+}
 ?>
